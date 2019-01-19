@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form id="form" role="form" action="{% url 'search-submit' %}" method="post">
+    {% csrf_token %}
+    <input name="search"
+           id="search"
+           type="search"
+           placeholder="Start typing here"
+           ic-post-to="{% url 'search-ajax-submit' %}"
+           ic-trigger-on="keyup changed"
+           ic-trigger-delay="300ms"
+           ic-target="#search-result-container"
+           style="width: 90%; margin-top: 4%;" />
+    <button type="submit">Search</button>
+</form>
+<span id="search-result-container"></span>
+{% endblock %}
