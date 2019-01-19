@@ -1,3 +1,4 @@
+{% block content %}
 {% if query %}
 	<h3>You searched for: <i>{{ query }}</i></h3>
 	{% if items %}
@@ -6,3 +7,4 @@
 		{% endfor %}
 	{% endif %}
 {% endif %}
+{% endblock %}
